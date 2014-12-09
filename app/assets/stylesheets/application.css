@@ -17,13 +17,24 @@
 #custom_style{
   height: 650px;
   width: 835px;
+   position: relative;
+  overflow: hidden;
+
 }
+/*#custom_style{
+ position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    height: 650px;
+    overflow: hidden;
+}*/
 
 #sidebar{
   float: right;
   height: 650px;
   width: 300px;
   background-color: #F2F1EF;
+  overflow: scroll;
 }
 
 #title{
@@ -45,4 +56,6 @@
   float: right;
   height: 650px;
   width: 300px;
+  font-size: .8em;
+  font-family: 'Bitter'
 }
