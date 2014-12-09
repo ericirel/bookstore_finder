@@ -10,15 +10,24 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
 <div id="sidebar">
-  <h2 id="title">Where<span id="r-title">R</span>theBooks</h2>
+  <div id="title-background">
+    <h2 id="title">Where<span id="r-title">R</span>theBooks</h2>
+  </div>
     <p id="about">
       Let's face it. Books are dying. This is a project to help promote local bookstores in NYC to help keep books alive.
     </p>
-    <div id="bookstore-sidebar">
-      <%= content_tag :hr %>
-      <%= render @bookstores %>
-    </div>
+  <div id="search-books">
+    <%= form_tag bookstores_path, :method => 'get' do %>
+      <%= text_field_tag :search, params[:search], :placeholder => "store, address, borough" %>
+      <%= submit_tag "Find Bookstores", :store => nil %>
+    <% end %>
+  </div>
+  <div id="bookstore-sidebar">
+    <%= content_tag :hr %>
+    <%= render @bookstores %>
+  </div>
 </div>
 
 <%= yield %>

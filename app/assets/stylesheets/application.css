@@ -14,10 +14,15 @@
  *= require_self
  */
 
+ body{
+  padding: 0;
+  margin: 0;
+ }
+
 #custom_style{
-  height: 650px;
+  height: 665px;
   width: 835px;
-   position: relative;
+  position: relative;
   overflow: hidden;
 
 }
@@ -31,19 +36,28 @@
 
 #sidebar{
   float: right;
-  height: 650px;
+  height: 665px;
   width: 300px;
   background-color: #F2F1EF;
   overflow: scroll;
 }
 
 #title{
-  padding-left: 30px;
+  margin-top: 0;
+  padding-left: 40px;
   font-family: courier;
+  color: #E4F1FE;
 }
 
 #r-title{
   font-size: 1.5em;
+}
+
+#title-background{
+  width: 300px;
+  height: 5%;
+  background-color: #6C7A89;
+  padding-bottom: 10px;
 }
 
 #about{
@@ -58,4 +72,8 @@
   width: 300px;
   font-size: .8em;
   font-family: 'Bitter'
+}
+
+#search-books{
+  margin-left: 30px;
 }

@@ -17,6 +17,11 @@ class BookstoresController < ApplicationController
       #   "width" => 30,
       #   "height" => 30})
     end
+    if params[:search]
+      @bookstores = Bookstore.search_for(params[:search])
+    else
+      @bookstores = Bookstore.all
+    end
   end
 
   def edit
