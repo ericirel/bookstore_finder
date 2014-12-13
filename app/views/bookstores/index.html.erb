@@ -1,6 +1,24 @@
 <div style='width: 800px;'>
   <div id="custom_style"></div>
 </div>
+<div id="sidebar">
+  <div id="title-background">
+    <h2 id="title">Where<span id="r-title">R</span>theBooks</h2>
+  </div>
+    <p id="about">
+      Let's face it, books are dying. This is a project to promote local bookstores in NYC and help keep books alive.
+    </p>
+    <div id="search-books">
+      <%= form_tag bookstores_path, :class => "search-bar", :method => 'get' do %>
+        <%= text_field_tag :search, params[:search], :placeholder => "store, address, borough" %>
+        <%= submit_tag "Find Bookstores", :class => "search", :store => nil %>
+    <% end %>
+    </div>
+    <div id="bookstore-sidebar">
+      <%= content_tag :hr %>
+      <%= render @bookstores %>
+    </div>
+  </div>
 
 <script type="text/javascript">
 
@@ -26,12 +44,30 @@ handler.buildMap({
     mapTypeId: google.maps.MapTypeId.ROADMAP,
     center:    new google.maps.LatLng(40.7127, 74.0059),
     styles: mapStyle
+
   }
 
 },
-function(){
+function markerCreate(){
   markers = handler.addMarkers(<%=raw @hash.to_json %>);
   handler.bounds.extendWith(markers);
   handler.fitMapToBounds();
 });
+
+function createSidebarH3(json){
+  return ("<a><h3>" + json.name + "</h3></a>");
+};
+
+function bindAToMarker($a, marker){
+  $a.on('click', function(){
+    handler.getMap().setZoom(14);
+    marker.setMap(handler.getMap()); //because clusterer removes map property from marker
+    marker.panTo();
+    google.maps.event.trigger(marker.getServiceObject(), 'click');
+  })
+};
+bindAToMarker();
+
+
 </script>
+

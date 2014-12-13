@@ -1,7 +1,9 @@
 <%= content_tag_for :div, bookstore do %>
-  <%= content_tag :h3, bookstore.store %>
+  <%= link_to content_tag :h3, bookstore.store %>
   <%= content_tag :hp, bookstore.address %>
   <%= content_tag :p, bookstore.description %>
+  <%= content_tag :hp, bookstore.phone_number %><br>
+  <a id="url-links"><%= link_to content_tag :hp, bookstore.url %></a>
 
 <% end %>
 <%= content_tag :hr %>

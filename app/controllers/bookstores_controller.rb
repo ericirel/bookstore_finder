@@ -9,19 +9,19 @@ class BookstoresController < ApplicationController
     @hash = Gmaps4rails.build_markers(@bookstores) do |bookstore, marker|
       marker.lat bookstore.latitude
       marker.lng bookstore.longitude
-      marker.infowindow bookstore.store
-      marker.infowindow bookstore.address
-      marker.infowindow bookstore.description
-      # marker.picture({
-      #   "url" => "https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/512/book.png",
-      #   "width" => 30,
-      #   "height" => 30})
-    end
+      marker.infowindow bookstore.store + bookstore.address + bookstore.description + bookstore.phone_number + bookstore.url
+      # marker.infowindow bookstore.store
+      end
     if params[:search]
       @bookstores = Bookstore.search_for(params[:search])
     else
       @bookstores = Bookstore.all
     end
+  end
+
+  def gmaps4rails_infowindow
+    @bookstores = Bookstore.all
+    bookstores.store + bookstores.address + bookstores.description + bookstores.phone_number + bookstores.url
   end
 
   def edit
@@ -38,7 +38,7 @@ class BookstoresController < ApplicationController
   end
 
   def create
-    @bookstore = Bookstore.create(params.require(:bookstore).permit(:address, :store, :description))
+    @bookstore = Bookstore.create(params.require(:bookstore).permit(:address, :store, :description, :phone_number, :url))
     redirect_to root_path
   end
 end
@@ -46,5 +46,5 @@ end
 private
 
   def bookstore_params
-    params.require(:bookstore).permit(:address, :store, :description)
+    params.require(:bookstore).permit(:address, :store, :description, :phone_number, :url)
   end

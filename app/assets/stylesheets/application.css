@@ -37,9 +37,10 @@
 #sidebar{
   float: right;
   height: 665px;
-  width: 300px;
+  width: 310px;
   background-color: #F2F1EF;
   overflow: scroll;
+  margin-top: -665px;
 }
 
 #title{
@@ -61,9 +62,10 @@
 }
 
 #about{
-  padding-left: 30px;
-  font-family: arial;
-  font-size: 1em;
+  padding-left: 25px;
+  font-family: 'Mandali', arial;
+  font-size: .75em;
+  font-weight: 600;
 }
 
 #bookstore-sidebar{
@@ -71,9 +73,34 @@
   height: 650px;
   width: 300px;
   font-size: .8em;
-  font-family: 'Bitter'
+  font-family: 'Bitter';
 }
 
 #search-books{
   margin-left: 30px;
 }
+/****Store Names****/
+a{
+  color: #F22613;
+  text-decoration: none;
+}
+
+.search{
+  background-color: #1BBC9B;
+  padding: 2px 6px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+#url-links{
+  color: black;
+}
+
+.yellow { border: 1px solid black; margin-top: 8px; background: yellow; padding: 5px; }
