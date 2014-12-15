@@ -24,6 +24,8 @@ gem 'spring',        group: :development
 
 gem 'geocoder'
 gem 'gmaps4rails'
+gem 'devise'
+gem 'activeadmin', github: 'activeadmin'
 
 
 
