@@ -3,6 +3,6 @@
   <%= content_tag :hp, bookstore.address %>
   <%= content_tag :p, bookstore.description %>
   <%= content_tag :hp, bookstore.phone_number %><br>
-  <%= link_to bookstore.url, url_for(bookstore.url) %>
+  <a id="url-links"><%= link_to bookstore.url, url_for(bookstore.url) %></a>
 <% end %>
 <%= content_tag :hr %>

@@ -17,6 +17,7 @@
  body{
   padding: 0;
   margin: 0;
+  position: relative;
  }
 
 #custom_style{
@@ -26,13 +27,6 @@
   overflow: hidden;
 
 }
-/*#custom_style{
- position: relative;
-    padding-bottom: 56.25%;
-    padding-top: 30px;
-    height: 650px;
-    overflow: hidden;
-}*/
 
 #sidebar{
   float: right;
@@ -41,6 +35,7 @@
   background-color: #F2F1EF;
   overflow: scroll;
   margin-top: -665px;
+  z-index: 1;
 }
 
 #title{
@@ -103,5 +98,3 @@ a{
 #url-links{
   color: black;
 }
-
-.yellow { border: 1px solid black; margin-top: 8px; background: yellow; padding: 5px; }
